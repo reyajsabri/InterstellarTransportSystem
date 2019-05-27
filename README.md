@@ -12,9 +12,10 @@ The Design contains two part:
 
 Note: due to time constrain, XML format of the file-upload is not implemented. Probably tomorrow I will complete it. However, excel file-upload is implemented.
 
-To Run the Application:
-   - run maven Build, install "RouteFinderCore" project in your ide/environment 
-   - run maven Build, install "InterstellarTransportSystem" project [this will produce deployable war file includes all dependencies]
+To Run the Application (Most common way):
+   - checkout both the project and import both project as Maven Project in your ide / environment.
+   - run maven update, Build, install "RouteFinderCore" project in your ide/environment 
+   - run maven update, Build, install "InterstellarTransportSystem" project [this will produce deployable war file includes all dependencies]
    - deploy "InterstellarTransportSystem-0.0.1-SNAPSHOT.war" file.
 
 Context root of the Application will be "TransportSystem/" 
