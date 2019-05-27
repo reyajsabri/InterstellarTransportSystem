@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: InterstellarTransportSystem
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: reyaj.ahmed
+Implementation-Vendor-Id: com.interstellar.transport
+Build-Jdk: 1.8.0_152
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/InterstellarTransportSystem
+Created-By: Maven Integration for Eclipse
+
