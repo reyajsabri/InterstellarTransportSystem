@@ -62,7 +62,7 @@ public class TestDataUtill {
 	    }
 	}
 
-	public Map<String, PlanetImpl> extractExcelTabToVertexEntity(FileInputStream file, XSSFSheet sheet) throws IOException {
+	public Map<String, PlanetImpl> extractExcelTabToPlanetImplEntity(FileInputStream file, XSSFSheet sheet) throws IOException {
 		Iterator<Row> rowIterator = sheet.iterator();
 		rowIterator.next();
 		Map<String, PlanetImpl> planetsMap = new HashMap<>();
@@ -89,7 +89,7 @@ public class TestDataUtill {
 		return planetsMap;
 	}
 	
-	public List<DistanceBoundRouteImpl> extractExcelTabToRouteEntity(FileInputStream file, XSSFSheet sheet, Map<String, PlanetImpl> nodesMap) throws IOException {
+	public List<DistanceBoundRouteImpl> extractExcelTabToDistanceRouteImplEntity(FileInputStream file, XSSFSheet sheet, Map<String, PlanetImpl> nodesMap) throws IOException {
 		Iterator<Row> rowIterator = sheet.iterator();
 		rowIterator.next();
 		List<DistanceBoundRouteImpl> routes = new ArrayList<>();
@@ -124,7 +124,7 @@ public class TestDataUtill {
 		return routes;
 	}
 	
-	public List<TimeBoundRouteImpl> extractExcelTabToTrafficEntity(FileInputStream file, XSSFSheet sheet, Map<String, PlanetImpl> nodesMap) throws IOException {
+	public List<TimeBoundRouteImpl> extractExcelTabToTimeRouteImplEntity(FileInputStream file, XSSFSheet sheet, Map<String, PlanetImpl> nodesMap) throws IOException {
 		Iterator<Row> rowIterator = sheet.iterator();
 		rowIterator.next();
 		List<TimeBoundRouteImpl> routes = new ArrayList<>();

@@ -17,12 +17,14 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.interstellar.transport.app.entity.DistanceBoundRouteImpl;
@@ -50,8 +52,7 @@ public class FileUploadController {
                                    RedirectAttributes redirectAttributes) {
 
         if (excelFile.isEmpty()) {
-            redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
-            return "redirect:/RouteUpload/UploadStatus";
+            return "redirect:/RouteUpload/UploadStatus?message="+"Error: Please select a file to upload";
         }
 
         try {
@@ -79,7 +80,7 @@ public class FileUploadController {
             e.printStackTrace();
         }
 
-        return "redirect:/RouteUpload/UploadStatus";
+        return "redirect:/RouteUpload/UploadStatus?message="+"You have successfully uploaded '" + excelFile.getOriginalFilename() + "'";
     }
 
 	private Map<String, PlanetImpl> extractExcelTabToVertexEntity(FileInputStream file, XSSFSheet sheet) throws IOException {
@@ -180,7 +181,11 @@ public class FileUploadController {
 	}
 
     @GetMapping("/UploadStatus")
-    public String UploadStatus() {
-        return "UploadStatus";
+    public ModelAndView UploadStatus(@RequestParam("message") String message) {
+    	ModelAndView model = new ModelAndView();
+    	model.addObject("message", message);
+    	model.setStatus(HttpStatus.OK);
+    	model.setViewName("UploadStatus");
+        return model;
     }
 }

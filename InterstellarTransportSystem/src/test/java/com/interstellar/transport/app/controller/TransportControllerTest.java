@@ -64,9 +64,9 @@ public class TransportControllerTest {
             
             XSSFSheet routeSheet = workbook.getSheetAt(1);
             XSSFSheet trafficSheet = workbook.getSheetAt(2);
-            Map<String, PlanetImpl> planetMap = utill.extractExcelTabToVertexEntity(file, planetsSheet);
-            List<DistanceBoundRouteImpl> routes = utill.extractExcelTabToRouteEntity(file, routeSheet, planetMap);
-            List<TimeBoundRouteImpl> traffics = utill.extractExcelTabToTrafficEntity(file, trafficSheet, planetMap);
+            Map<String, PlanetImpl> planetMap = utill.extractExcelTabToPlanetImplEntity(file, planetsSheet);
+            List<DistanceBoundRouteImpl> routes = utill.extractExcelTabToDistanceRouteImplEntity(file, routeSheet, planetMap);
+            List<TimeBoundRouteImpl> traffics = utill.extractExcelTabToTimeRouteImplEntity(file, trafficSheet, planetMap);
             file.close();
 
             uploadService.saveUploadDataToDB(new ArrayList<>(planetMap.values()), routes, traffics);

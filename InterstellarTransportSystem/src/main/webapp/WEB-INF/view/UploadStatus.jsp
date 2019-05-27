@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<body>
+<body style='background-color: #1ABC9C;'>
+<% String val = request.getParameter("message"); %>
+<h1>Interstellar Transport System - Upload Status</h1>
 
-<h1>Spring Boot - Upload Status</h1>
-
-<div th:if="${message}">
-    <h2 th:text="${message}"/>
-</div>
 
 </body>
 </html>

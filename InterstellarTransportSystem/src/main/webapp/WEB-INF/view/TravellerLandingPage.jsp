@@ -20,7 +20,7 @@
 	<br/>
 	<h4>You can upload Your Galaxy information in CSV OR XML File </h4>
 	<div id="csvFiel" class="padding">
-        <a id="downloadCsvFileLink" target="_self" class="linkCSS" href="${pageContext.request.contextPath}/download/csv">Download  sample Csv File</a>
+        <a id="downloadCsvFileLink" target="_self" class="linkCSS" href="${pageContext.request.contextPath}/download/csv">Download  sample Excel File</a>
     </div>
     <div id="csvFiel" class="padding">
         <a id="downloadXMLFileLink" target="_self" class="linkCSS" href="${pageContext.request.contextPath}/download/xml">Download sample xml File</a>
