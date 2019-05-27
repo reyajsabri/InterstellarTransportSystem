@@ -2,6 +2,7 @@ package com.interstellar.transport.app.controller;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -25,8 +26,14 @@ public class TestDataUtill {
 		if(isServerStarted)
 			return;
 		try {
-			String[] arr = {};
-			sv.main(arr);
+			
+			if(!available(9001)) {
+				return;
+			}
+			
+			String[] arg = {"-port", "9001"};
+			sv.setPort(9001);
+			sv.main(arg);
 			isServerStarted = true;
 			Thread.sleep(1000);
 			
@@ -45,6 +52,14 @@ public class TestDataUtill {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private static boolean available(int port) {
+	    try (Socket ignored = new Socket("localhost", port)) {
+	        return false;
+	    } catch (IOException ignored) {
+	        return true;
+	    }
 	}
 
 	public Map<String, PlanetImpl> extractExcelTabToVertexEntity(FileInputStream file, XSSFSheet sheet) throws IOException {

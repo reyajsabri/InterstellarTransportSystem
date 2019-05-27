@@ -40,14 +40,13 @@ import com.interstellar.transport.app.service.UploadService;
 @WebAppConfiguration
 public class TransportControllerTest {
 	private MockMvc mockMvc;
-	private static final Server sv = new Server();
 	private TestDataUtill utill = new TestDataUtill();
 	static {
-		//TestDataUtill.startHSQLDB();
+		TestDataUtill.startHSQLDB();
 	}
 	
 	@Autowired
-	  private WebApplicationContext webApplicationContext;
+	private WebApplicationContext webApplicationContext;
 	
 	@Autowired
 	UploadService uploadService;
