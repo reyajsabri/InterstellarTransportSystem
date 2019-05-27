@@ -18,7 +18,8 @@ To Run the Application (Most common way):
    - run maven update, Build, install "InterstellarTransportSystem" project [this will produce deployable war file includes all dependencies]
    - deploy "InterstellarTransportSystem-0.0.1-SNAPSHOT.war" file.
 
-Context root of the Application will be "TransportSystem/" 
+Context root of the Application will be "TransportSystem/"
+e.g. http://localhost:8080/TransportSystem/
 URL for the Landing page [Index page] on local host will be: http://localhost:8080/TransportSystem/
 URL for the Seatch page on localhost will be: http://localhost:8080/TransportSystem/Search/
 URL for the Upload Planet/Node information page on localhost will be: http://localhost:8080/TransportSystem/RouteUpload/
