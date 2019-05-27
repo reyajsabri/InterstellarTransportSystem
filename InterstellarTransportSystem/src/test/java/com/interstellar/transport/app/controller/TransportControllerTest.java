@@ -42,8 +42,13 @@ public class TransportControllerTest {
 	private static final Server sv = new Server();
 	private TestDataUtill utill = new TestDataUtill();
 	static {
-		String[] arr = {};
-		sv.main(arr);
+		try {
+			String[] arr = {};
+			//sv.main(arr);
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@Autowired

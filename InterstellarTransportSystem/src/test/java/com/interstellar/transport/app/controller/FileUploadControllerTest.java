@@ -39,8 +39,14 @@ public class FileUploadControllerTest {
 	private TestDataUtill utill = new TestDataUtill();
 	String UPLOADED_FOLDER = System.getProperty("java.io.tmpdir");
 	static {
-		String[] arr = {};
-		sv.main(arr);
+		try {
+			String[] arr = {};
+			sv.main(arr);
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	@Autowired
