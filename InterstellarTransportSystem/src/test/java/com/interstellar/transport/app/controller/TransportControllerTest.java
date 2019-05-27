@@ -18,6 +18,7 @@ import java.util.Map;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.hsqldb.server.Server;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -42,13 +43,7 @@ public class TransportControllerTest {
 	private static final Server sv = new Server();
 	private TestDataUtill utill = new TestDataUtill();
 	static {
-		try {
-			String[] arr = {};
-			//sv.main(arr);
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		//TestDataUtill.startHSQLDB();
 	}
 	
 	@Autowired
@@ -59,6 +54,7 @@ public class TransportControllerTest {
 	
 	@Before
 	  public void prepareMockMvc() {
+		
 	    this.mockMvc = webAppContextSetup(this.webApplicationContext).build();
 	    
 	    try {
@@ -102,5 +98,10 @@ public class TransportControllerTest {
 	  .content("{\"source\":\"A\",\"destination\":\"I\"}")).andExpect(content().string("Earth==>Moon==>Mars"));
 	
 	    
+	}
+	
+	@AfterClass
+	public static void tearDown() {
+		TestDataUtill.stopHSQLDB();
 	}
 }

@@ -35,18 +35,11 @@ import junit.framework.Assert;
 public class FileUploadControllerTest {
 	
 	private MockMvc mockMvc;
-	private static final Server sv = new Server();
 	private TestDataUtill utill = new TestDataUtill();
 	String UPLOADED_FOLDER = System.getProperty("java.io.tmpdir");
+	
 	static {
-		try {
-			String[] arr = {};
-			sv.main(arr);
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		
+		TestDataUtill.startHSQLDB();
 	}
 	
 	@Autowired
@@ -81,12 +74,7 @@ public class FileUploadControllerTest {
 	}
 	
 	@AfterClass
-	public static void aa() {
-		sv.shutdown();
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+	public static void tearDown() {
+		TestDataUtill.stopHSQLDB();
 	}
 }

@@ -11,12 +11,41 @@ import java.util.Map;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.hsqldb.server.Server;
 
 import com.interstellar.transport.app.entity.DistanceBoundRouteImpl;
 import com.interstellar.transport.app.entity.PlanetImpl;
 import com.interstellar.transport.app.entity.TimeBoundRouteImpl;
 
 public class TestDataUtill {
+	
+	private static final Server sv = new Server();
+	private static volatile boolean isServerStarted = false;
+	public static void startHSQLDB() {
+		if(isServerStarted)
+			return;
+		try {
+			String[] arr = {};
+			sv.main(arr);
+			isServerStarted = true;
+			Thread.sleep(1000);
+			
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void stopHSQLDB() {
+		if(!isServerStarted)
+			return;
+		try {
+			sv.shutdown();
+			Thread.sleep(1000);
+			isServerStarted = false;
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public Map<String, PlanetImpl> extractExcelTabToVertexEntity(FileInputStream file, XSSFSheet sheet) throws IOException {
 		Iterator<Row> rowIterator = sheet.iterator();
