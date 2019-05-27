@@ -75,7 +75,12 @@ public class FileUploadControllerTest {
 	}
 	
 	@AfterClass
-	public void aa() {
+	public static void aa() {
 		sv.shutdown();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 }
