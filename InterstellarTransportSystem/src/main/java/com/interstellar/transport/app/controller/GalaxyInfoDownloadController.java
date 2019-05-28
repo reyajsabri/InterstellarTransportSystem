@@ -19,10 +19,70 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/download")
 public class GalaxyInfoDownloadController {
-	@RequestMapping("/csv")
+	@RequestMapping("/excel")
 	public void downloadCSVResource(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
 		URL resource = GalaxyInfoDownloadController.class.getResource("/sample/GalaxyMap.xlsx");
+		File file = Paths.get(resource.toURI()).toFile();
+		if (file.exists()) {
+			//get the mimetype
+			String mimeType = URLConnection.guessContentTypeFromName(file.getName());
+			if (mimeType == null) {
+				//unknown mimetype so set the mimetype to application/octet-stream
+				mimeType = "application/octet-stream";
+			}
+
+			response.setContentType(mimeType);
+
+			
+			response.setHeader("Content-Disposition", String.format("inline; filename=\"" + file.getName() + "\""));
+
+			 //Here we have mentioned it to show as attachment
+			 //response.setHeader("Content-Disposition", String.format("attachment; filename=\"" + file.getName() + "\""));
+
+			response.setContentLength((int) file.length());
+
+			InputStream inputStream = new BufferedInputStream(new FileInputStream(file));
+
+			FileCopyUtils.copy(inputStream, response.getOutputStream());
+
+		}
+	}
+	
+	@RequestMapping("/xml")
+	public void downloadXMLResource(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		URL resource = GalaxyInfoDownloadController.class.getResource("/sample/GalaxyMap.xml");
+		File file = Paths.get(resource.toURI()).toFile();
+		if (file.exists()) {
+			//get the mimetype
+			String mimeType = URLConnection.guessContentTypeFromName(file.getName());
+			if (mimeType == null) {
+				//unknown mimetype so set the mimetype to application/octet-stream
+				mimeType = "application/octet-stream";
+			}
+
+			response.setContentType(mimeType);
+
+			
+			response.setHeader("Content-Disposition", String.format("inline; filename=\"" + file.getName() + "\""));
+
+			 //Here we have mentioned it to show as attachment
+			 //response.setHeader("Content-Disposition", String.format("attachment; filename=\"" + file.getName() + "\""));
+
+			response.setContentLength((int) file.length());
+
+			InputStream inputStream = new BufferedInputStream(new FileInputStream(file));
+
+			FileCopyUtils.copy(inputStream, response.getOutputStream());
+
+		}
+	}
+	
+	@RequestMapping("/xsd")
+	public void downloadXSDResource(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		URL resource = GalaxyInfoDownloadController.class.getResource("/sample/GalaxyMap.xsd");
 		File file = Paths.get(resource.toURI()).toFile();
 		if (file.exists()) {
 			//get the mimetype

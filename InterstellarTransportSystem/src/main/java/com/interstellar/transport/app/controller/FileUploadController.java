@@ -59,6 +59,10 @@ public class FileUploadController {
     public String singleFileXmlUpload(@RequestParam("file") MultipartFile xmlFile,
                                    RedirectAttributes redirectAttributes) {
     	
+    	if(true) {
+    		return "redirect:/RouteUpload/UploadStatus?message="+"XML  Upload functionality is in-progress ";
+    	}
+    	
     	if (xmlFile.isEmpty()) {
             return "redirect:/RouteUpload/UploadStatus?message="+"Error: Please select a file to upload";
         }
@@ -123,6 +127,7 @@ public class FileUploadController {
 
         } catch (IOException e) {
             e.printStackTrace();
+            return "redirect:/RouteUpload/UploadStatus?message="+"Error: Some Exception Need to Handle!";
         }
 
         return "redirect:/RouteUpload/UploadStatus?message="+"You have successfully uploaded '" + excelFile.getOriginalFilename() + "'";
