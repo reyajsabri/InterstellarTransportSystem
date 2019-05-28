@@ -6,11 +6,13 @@ I have checked in Initial Design of the given assesment which includes:
    - Working JUnit Test and Integration Test
    - Working Upload record and save to in-Memory database (HSQL DB) [excel file only Need to work on XML file format ]
 
-The Design contains two part: 
-      Project: "RouteFinderCore" which is core module for the search logic
-      Project: "InterstellarTransportSystem" which is web application and having Client interfaces (UI pages) to interact with system.
+Planets / Graph information Upload:
+   - Excelsheet upload is functional
+   - XML Upload is in-progress: JAXB bindings, XSD and XML formate implemented. 
 
-Note: due to time constrain, XML format of the file-upload is not implemented. Probably tomorrow I will complete it. However, excel file-upload is implemented.
+The Design contains two part: 
+   - Project: "RouteFinderCore" which is core module for the search logic
+   - Project: "InterstellarTransportSystem" which is web application and having Client interfaces (UI pages) to interact with system.
 
 To Run the Application (Most common way):
    - checkout both the project and import both project as Maven Project in your ide / environment.
