@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<galaxy>
+	<route id="1" weitage="0.44" type="distance">
+		<source>
+			<planet id="A" name="Earth"/>
+		</source>
+		<destination>
+			<planet id="B" name="Moon"/>
+		</destination>
+	</route>
+	<route id="2" weitage="1.89" type="distance">
+		<source>
+			<planet id="A" name="Earth"/>
+		</source>
+		<destination>
+			<planet id="C" name="Jupiter"/>
+		</destination>
+	</route>
+	<route id="3" weitage="0.10" type="distance">
+		<source>
+			<planet id="A" name="Earth"/>
+		</source>
+		<destination>
+			<planet id="D" name="Venus"/>
+		</destination>
+	</route>
+	<route id="4" weitage="2.44" type="distance">
+		<source>
+			<planet id="B" name=" "/>
+		</source>
+		<destination>
+			<planet id="H" name="Pluto"/>
+		</destination>
+	</route>
+	<route id="5" weitage="3.45" type="distance">
+		<source>
+			<planet id="B" name=" "/>
+		</source>
+		<destination>
+			<planet id="E" name="Mars"/>
+		</destination>
+	</route>
+	<route id="6" weitage="0.49" type="distance">
+		<source>
+			<planet id="C" name="Jupiter"/>
+		</source>
+		<destination>
+			<planet id="F" name="Saturn"/>
+		</destination>
+	</route>
+	<route id="7" weitage="2.34" type="distance">
+		<source>
+			<planet id="D" name="Venus"/>
+		</source>
+		<destination>
+			<planet id="L" name="Luhman 16"/>
+		</destination>
+	</route>
+	<route id="8" weitage="2.61" type="distance">
+		<source>
+			<planet id="D" name="Venus"/>
+		</source>
+		<destination>
+			<planet id="M" name="Epsilon Eridani"/>
+		</destination>
+	</route>
+	<route id="9" weitage="3.71" type="distance">
+		<source>
+			<planet id="H" name="Pluto"/>
+		</source>
+		<destination>
+			<planet id="G" name="Uranus"/>
+		</destination>
+	</route>
+	<route id="10" weitage="8.09" type="distance">
+		<source>
+			<planet id="E" name="Mars"/>
+		</source>
+		<destination>
+			<planet id="I" name="Neptune"/>
+		</destination>
+	</route>
+	<route id="11" weitage="5.46" type="distance">
+		<source>
+			<planet id="F" name="Saturn"/>
+		</source>
+		<destination>
+			<planet id="J" name="Mercury"/>
+		</destination>
+	</route>
+	<route id="12" weitage="3.67" type="distance">
+		<source>
+			<planet id="F" name="Saturn"/>
+		</source>
+		<destination>
+			<planet id="K" name="Alpha Centauri"/>
+		</destination>
+	</route>
+	<route id="13" weitage="5.25" type="distance">
+		<source>
+			<planet id="G" name="Uranus"/>
+		</source>
+		<destination>
+			<planet id="Z" name="Gliese 436"/>
+		</destination>
+	</route>
+	<route id="14" weitage="13.97" type="distance">
+		<source>
+			<planet id="I" name="Neptune"/>
+		</source>
+		<destination>
+			<planet id="Z" name="Gliese 436"/>
+		</destination>
+	</route>
+	<route id="15" weitage="14.78" type="distance">
+		<source>
+			<planet id="I" name="Neptune"/>
+		</source>
+		<destination>
+			<planet id="J" name="Mercury"/>
+		</destination>
+	</route>
+	<route id="16" weitage="15.23" type="distance">
+		<source>
+			<planet id="L" name="Luhman 16"/>
+		</source>
+		<destination>
+			<planet id="T" name="Gliese 876#"/>
+		</destination>
+	</route>
+	<route id="17" weitage="10.43" type="distance">
+		<source>
+			<planet id="T" name="Gliese 876#"/>
+		</source>
+		<destination>
+			<planet id="N" name="Groombridge 34"/>
+		</destination>
+	</route>
+	<route id="18" weitage="14.22" type="distance">
+		<source>
+			<planet id="T" name="Gliese 876#"/>
+		</source>
+		<destination>
+			<planet id="S" name="Gliese 674"/>
+		</destination>
+	</route>
+	<route id="19" weitage="6.02" type="distance">
+		<source>
+			<planet id="S" name="Gliese 674"/>
+		</source>
+		<destination>
+			<planet id="O" name="Epsilon Indi"/>
+		</destination>
+	</route>
+	<route id="20" weitage="5.26" type="distance">
+		<source>
+			<planet id="O" name="Epsilon Indi"/>
+		</source>
+		<destination>
+			<planet id="U" name="Gliese 832"/>
+		</destination>
+	</route>
+	<route id="21" weitage="12.34" type="distance">
+		<source>
+			<planet id="J" name="Mercury"/>
+		</source>
+		<destination>
+			<planet id="R" name="Gliese 687"/>
+		</destination>
+	</route>
+	<route id="22" weitage="10.10" type="distance">
+		<source>
+			<planet id="R" name="Gliese 687"/>
+		</source>
+		<destination>
+			<planet id="P" name="Tau Ceti"/>
+		</destination>
+	</route>
+	<route id="23" weitage="9.95" type="distance">
+		<source>
+			<planet id="R" name="Gliese 687"/>
+		</source>
+		<destination>
+			<planet id="L\'" name=" "/>
+		</destination>
+	</route>
+	<route id="24" weitage="18.91" type="distance">
+		<source>
+			<planet id="Z" name="Gliese 436"/>
+		</source>
+		<destination>
+			<planet id="Y" name="Gliese 176"/>
+		</destination>
+	</route>
+	<route id="25" weitage="22.04" type="distance">
+		<source>
+			<planet id="Y" name="Gliese 176"/>
+		</source>
+		<destination>
+			<planet id="Q" name="Kapteyn's star"/>
+		</destination>
+	</route>
+	<route id="26" weitage="10.51" type="distance">
+		<source>
+			<planet id="Q" name="Kapteyn's star"/>
+		</source>
+		<destination>
+			<planet id="X" name="HD 102365"/>
+		</destination>
+	</route>
+	<route id="27" weitage="23.61" type="distance">
+		<source>
+			<planet id="L\'" name=" "/>
+		</source>
+		<destination>
+			<planet id="X" name="HD 102365"/>
+		</destination>
+	</route>
+	<route id="28" weitage="19.94" type="distance">
+		<source>
+			<planet id="X" name="HD 102365"/>
+		</source>
+		<destination>
+			<planet id="K\'" name="Ursae Majoris"/>
+		</destination>
+	</route>
+	<route id="29" weitage="9.31" type="distance">
+		<source>
+			<planet id="P" name="Tau Ceti"/>
+		</source>
+		<destination>
+			<planet id="U" name="Gliese 832"/>
+		</destination>
+	</route>
+	<route id="30" weitage="21.23" type="distance">
+		<source>
+			<planet id="U" name="Gliese 832"/>
+		</source>
+		<destination>
+			<planet id="K\'" name="Ursae Majoris"/>
+		</destination>
+	</route>
+	<route id="31" weitage="25.96" type="distance">
+		<source>
+			<planet id="U" name="Gliese 832"/>
+		</source>
+		<destination>
+			<planet id="J\'" name="HD 38858"/>
+		</destination>
+	</route>
+	<route id="32" weitage="3.16" type="distance">
+		<source>
+			<planet id="J\'" name="HD 38858"/>
+		</source>
+		<destination>
+			<planet id="V" name="Fomalhaut"/>
+		</destination>
+	</route>
+	<route id="33" weitage="20.42" type="distance">
+		<source>
+			<planet id="K\'" name="Ursae Majoris"/>
+		</source>
+		<destination>
+			<planet id="V" name="Fomalhaut"/>
+		</destination>
+	</route>
+	<route id="34" weitage="17.10" type="distance">
+		<source>
+			<planet id="J\'" name="HD 38858"/>
+		</source>
+		<destination>
+			<planet id="I\'" name="Gliese 317"/>
+		</destination>
+	</route>
+	<route id="35" weitage="19.52" type="distance">
+		<source>
+			<planet id="Y" name="Gliese 176"/>
+		</source>
+		<destination>
+			<planet id="A\'" name="Pollux"/>
+		</destination>
+	</route>
+	<route id="36" weitage="31.56" type="distance">
+		<source>
+			<planet id="A\'" name="Pollux"/>
+		</source>
+		<destination>
+			<planet id="B\'" name="Gliese 86"/>
+		</destination>
+	</route>
+	<route id="37" weitage="23.13" type="distance">
+		<source>
+			<planet id="B\'" name="Gliese 86"/>
+		</source>
+		<destination>
+			<planet id="C\'" name="HIP 57050"/>
+		</destination>
+	</route>
+	<route id="38" weitage="28.89" type="distance">
+		<source>
+			<planet id="K\'" name="Ursae Majoris"/>
+		</source>
+		<destination>
+			<planet id="W" name="Virginis"/>
+		</destination>
+	</route>
+	<route id="39" weitage="10.64" type="distance">
+		<source>
+			<planet id="W" name="Virginis"/>
+		</source>
+		<destination>
+			<planet id="C\'" name="HIP 57050"/>
+		</destination>
+	</route>
+	<route id="40" weitage="36.19" type="distance">
+		<source>
+			<planet id="W" name="Virginis"/>
+		</source>
+		<destination>
+			<planet id="E\'" name="GJ 1214"/>
+		</destination>
+	</route>
+	<route id="41" weitage="36.48" type="distance">
+		<source>
+			<planet id="C\'" name="HIP 57050"/>
+		</source>
+		<destination>
+			<planet id="D\'" name="Piscium"/>
+		</destination>
+	</route>
+	<route id="42" weitage="41.26" type="distance">
+		<source>
+			<planet id="E\'" name="GJ 1214"/>
+		</source>
+		<destination>
+			<planet id="D\'" name="Piscium"/>
+		</destination>
+	</route>
+	<route id="43" weitage="42.07" type="distance">
+		<source>
+			<planet id="E\'" name="GJ 1214"/>
+		</source>
+		<destination>
+			<planet id="F\'" name="Upsilon Andromedae"/>
+		</destination>
+	</route>
+	<route id="44" weitage="17.63" type="distance">
+		<source>
+			<planet id="F\'" name="Upsilon Andromedae"/>
+		</source>
+		<destination>
+			<planet id="G\'" name="Gamma Cephei"/>
+		</destination>
+	</route>
+	<route id="45" weitage="40.48" type="distance">
+		<source>
+			<planet id="G\'" name="Gamma Cephei"/>
+		</source>
+		<destination>
+			<planet id="H\'" name="HD 176051"/>
+		</destination>
+	</route>
+	
+</galaxy>  

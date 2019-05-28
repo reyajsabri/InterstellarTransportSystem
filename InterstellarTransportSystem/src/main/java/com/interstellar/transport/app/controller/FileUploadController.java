@@ -3,6 +3,7 @@ package com.interstellar.transport.app.controller;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -11,6 +12,12 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import javax.xml.XMLConstants;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -28,6 +35,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.interstellar.transport.app.entity.DistanceBoundRouteImpl;
+import com.interstellar.transport.app.entity.GalaxyImpl;
 import com.interstellar.transport.app.entity.PlanetImpl;
 import com.interstellar.transport.app.entity.TimeBoundRouteImpl;
 import com.interstellar.transport.app.service.UploadService;
@@ -47,6 +55,43 @@ public class FileUploadController {
         return "Upload";
     }
 
+    @PostMapping("/XMLUpload")
+    public String singleFileXmlUpload(@RequestParam("file") MultipartFile xmlFile,
+                                   RedirectAttributes redirectAttributes) {
+    	
+    	if (xmlFile.isEmpty()) {
+            return "redirect:/RouteUpload/UploadStatus?message="+"Error: Please select a file to upload";
+        }
+    	try {
+    		
+    		URL schemaResource = FileUploadController.class.getResource("/sample/GalaxyMap.xsd");
+    		File schemaFile = Paths.get(schemaResource.toURI()).toFile();
+    		
+    		// Get the file and save it somewhere
+            byte[] bytes = xmlFile.getBytes();
+            Path path = Paths.get(UPLOADED_FOLDER + xmlFile.getOriginalFilename());
+            Files.write(path, bytes);
+            
+            File savedXmlFile = new File(path.toString());
+            
+            //Get JAXBContext
+            JAXBContext jaxbContext = JAXBContext.newInstance(GalaxyImpl.class);
+             
+            //Create Unmarshaller
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+             
+            //Setup schema validator
+            SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.XML_NS_URI);
+            Schema galaxySchema = schemaFactory.newSchema(schemaFile);
+            jaxbUnmarshaller.setSchema(galaxySchema);
+            
+            
+    	}catch (Exception e) {
+            e.printStackTrace();
+        }
+    	
+    	return "redirect:/RouteUpload/UploadStatus?message="+"You have successfully uploaded '" + xmlFile.getOriginalFilename() + "'";
+    }
     @PostMapping("/ExcelUpload")
     public String singleFileUpload(@RequestParam("file") MultipartFile excelFile,
                                    RedirectAttributes redirectAttributes) {
