@@ -25,12 +25,19 @@ public class UploadServiceImpl implements UploadService{
 	
 	@Override
 	public void saveUploadDataToDB(List<PlanetImpl> planets, List<DistanceBoundRouteImpl> routes, List<TimeBoundRouteImpl> traffics) {
-		planetRepository.saveAll(planets);
-		planetRepository.flush();
-		distanceBoundRouteRepogitory.saveAll(routes);
-		distanceBoundRouteRepogitory.flush();
-		timeBoundRouteRepogitory.saveAll(traffics);
-		timeBoundRouteRepogitory.flush();
+		if(planets.size()>0) {
+			planetRepository.saveAll(planets);
+			planetRepository.flush();
+		}
+		if(routes.size()>0) {
+			distanceBoundRouteRepogitory.saveAll(routes);
+			distanceBoundRouteRepogitory.flush();
+		}
+		if(traffics.size()>0) {
+			timeBoundRouteRepogitory.saveAll(traffics);
+			timeBoundRouteRepogitory.flush();
+		}
+		
 	}
 
 }

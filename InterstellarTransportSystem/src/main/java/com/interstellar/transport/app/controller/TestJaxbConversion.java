@@ -12,14 +12,16 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 
 import com.interstellar.transport.app.entity.GalaxyImpl;
+import com.interstellar.transport.app.entity.PlanetImpl;
 
 public class TestJaxbConversion {
+
 
 	public static void main1(String[] args) {
 		
 		try
 		{
-			URL xmlResource = FileUploadController.class.getResource("/sample/GalaxyMap.xml");
+			URL xmlResource = FileUploadController.class.getResource("/sample/TrafficBoundGalaxyMap.xml");
 			File savedXmlFile = Paths.get(xmlResource.toURI()).toFile();
 			
 			JAXBContext jaxbContext = JAXBContext.newInstance(GalaxyImpl.class);             
@@ -27,7 +29,9 @@ public class TestJaxbConversion {
 		    Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 		 
 		    GalaxyImpl galaxyImpl = (GalaxyImpl) jaxbUnmarshaller.unmarshal(savedXmlFile);
-		     
+		    galaxyImpl.getRoutes().forEach(route -> {
+		    	route.getDestination().getId();
+		    });
 		    System.out.println(galaxyImpl);
 		}
 		catch (Exception e)
@@ -44,7 +48,7 @@ public class TestJaxbConversion {
 			URL schemaResource = FileUploadController.class.getResource("/sample/GalaxyMap.xsd");
 			File schemaFile = Paths.get(schemaResource.toURI()).toFile();
 			
-			URL xmlResource = FileUploadController.class.getResource("/sample/GalaxyMap.xml");
+			URL xmlResource = FileUploadController.class.getResource("/sample/DistanceBoundGalaxyMap.xml");
 			File savedXmlFile = Paths.get(xmlResource.toURI()).toFile();
 			
 	        //Get JAXBContext

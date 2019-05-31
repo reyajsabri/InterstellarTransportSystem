@@ -19,7 +19,7 @@ import com.interstellar.transport.core.Route;
 
 @Entity
 @Table(name = "PLANET_NAMES", schema="PUBLIC")
-@XmlRootElement(name="planet")
+@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public class PlanetImpl implements Planet {
 

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<galaxy>
+	<route id="1" weitage="0.44" type="traffic">
+		<sourcePlanet  id="A" name="Earth"/>
+		<destinationPlanet id="B" name="Moon"/>
+	</route>
+	<route id="2" weitage="1.89" type="traffic">
+		<sourcePlanet id="A" name="Earth"/>
+		<destinationPlanet id="C" name="Jupiter"/>
+	</route>
+	<route id="3" weitage="0.10" type="traffic">
+		<sourcePlanet id="A" name="Earth"/>
+		<destinationPlanet id="D" name="Venus"/>
+	</route>
+	<route id="4" weitage="2.44" type="traffic">
+		<sourcePlanet id="B" name=" "/>
+		<destinationPlanet id="H" name="Pluto"/>
+	</route>
+	<route id="5" weitage="3.45" type="traffic">
+		<sourcePlanet id="B" name=" "/>
+		<destinationPlanet id="E" name="Mars"/>
+	</route>
+	<route id="6" weitage="0.49" type="traffic">
+		<sourcePlanet id="C" name="Jupiter"/>
+		<destinationPlanet id="F" name="Saturn"/>
+	</route>
+	<route id="7" weitage="2.34" type="traffic">
+		<sourcePlanet id="D" name="Venus"/>
+		
+		<destinationPlanet id="L" name="Luhman 16"/>
+		
+	</route>
+	<route id="8" weitage="2.61" type="traffic">
+		<sourcePlanet id="D" name="Venus"/>
+		
+		<destinationPlanet id="M" name="Epsilon Eridani"/>
+		
+	</route>
+	<route id="9" weitage="3.71" type="traffic">
+		<sourcePlanet id="H" name="Pluto"/>
+		
+		<destinationPlanet id="G" name="Uranus"/>
+		
+	</route>
+	<route id="10" weitage="8.09" type="traffic">
+		<sourcePlanet id="E" name="Mars"/>
+		
+		<destinationPlanet id="I" name="Neptune"/>
+		
+	</route>
+	<route id="11" weitage="5.46" type="traffic">
+		<sourcePlanet id="F" name="Saturn"/>
+		
+		<destinationPlanet id="J" name="Mercury"/>
+		
+	</route>
+	<route id="12" weitage="3.67" type="traffic">
+		<sourcePlanet id="F" name="Saturn"/>
+		
+		<destinationPlanet id="K" name="Alpha Centauri"/>
+		
+	</route>
+	<route id="13" weitage="5.25" type="traffic">
+		<sourcePlanet id="G" name="Uranus"/>
+		
+		<destinationPlanet id="Z" name="Gliese 436"/>
+		
+	</route>
+	<route id="14" weitage="13.97" type="traffic">
+		<sourcePlanet id="I" name="Neptune"/>
+		
+		<destinationPlanet id="Z" name="Gliese 436"/>
+		
+	</route>
+	<route id="15" weitage="14.78" type="traffic">
+		<sourcePlanet id="I" name="Neptune"/>
+		
+		<destinationPlanet id="J" name="Mercury"/>
+		
+	</route>
+	<route id="16" weitage="15.23" type="traffic">
+		<sourcePlanet id="L" name="Luhman 16"/>
+		
+		<destinationPlanet id="T" name="Gliese 876#"/>
+		
+	</route>
+	<route id="17" weitage="10.43" type="traffic">
+		<sourcePlanet id="T" name="Gliese 876#"/>
+		
+		<destinationPlanet id="N" name="Groombridge 34"/>
+		
+	</route>
+	<route id="18" weitage="14.22" type="traffic">
+		<sourcePlanet id="T" name="Gliese 876#"/>
+		
+		<destinationPlanet id="S" name="Gliese 674"/>
+		
+	</route>
+	<route id="19" weitage="6.02" type="traffic">
+		<sourcePlanet id="S" name="Gliese 674"/>
+		
+		<destinationPlanet id="O" name="Epsilon Indi"/>
+		
+	</route>
+	<route id="20" weitage="5.26" type="traffic">
+		<sourcePlanet id="O" name="Epsilon Indi"/>
+		
+		<destinationPlanet id="U" name="Gliese 832"/>
+		
+	</route>
+	<route id="21" weitage="12.34" type="traffic">
+		<sourcePlanet id="J" name="Mercury"/>
+		
+		<destinationPlanet id="R" name="Gliese 687"/>
+		
+	</route>
+	<route id="22" weitage="10.10" type="traffic">
+		<sourcePlanet id="R" name="Gliese 687"/>
+		
+		<destinationPlanet id="P" name="Tau Ceti"/>
+		
+	</route>
+	<route id="23" weitage="9.95" type="traffic">
+		<sourcePlanet id="R" name="Gliese 687"/>
+		
+		<destinationPlanet id="L\'" name=" "/>
+		
+	</route>
+	<route id="24" weitage="18.91" type="traffic">
+		<sourcePlanet id="Z" name="Gliese 436"/>
+		
+		<destinationPlanet id="Y" name="Gliese 176"/>
+		
+	</route>
+	<route id="25" weitage="22.04" type="traffic">
+		<sourcePlanet id="Y" name="Gliese 176"/>
+		
+		<destinationPlanet id="Q" name="Kapteyn's star"/>
+		
+	</route>
+	<route id="26" weitage="10.51" type="traffic">
+		<sourcePlanet id="Q" name="Kapteyn's star"/>
+		
+		<destinationPlanet id="X" name="HD 102365"/>
+		
+	</route>
+	<route id="27" weitage="23.61" type="traffic">
+		<sourcePlanet id="L\'" name=" "/>
+		
+		<destinationPlanet id="X" name="HD 102365"/>
+		
+	</route>
+	<route id="28" weitage="19.94" type="traffic">
+		<sourcePlanet id="X" name="HD 102365"/>
+		
+		<destinationPlanet id="K\'" name="Ursae Majoris"/>
+		
+	</route>
+	<route id="29" weitage="9.31" type="traffic">
+		<sourcePlanet id="P" name="Tau Ceti"/>
+		
+		<destinationPlanet id="U" name="Gliese 832"/>
+		
+	</route>
+	<route id="30" weitage="21.23" type="traffic">
+		<sourcePlanet id="U" name="Gliese 832"/>
+		
+		<destinationPlanet id="K\'" name="Ursae Majoris"/>
+		
+	</route>
+	<route id="31" weitage="25.96" type="traffic">
+		<sourcePlanet id="U" name="Gliese 832"/>
+		
+		<destinationPlanet id="J\'" name="HD 38858"/>
+		
+	</route>
+	<route id="32" weitage="3.16" type="traffic">
+		<sourcePlanet id="J\'" name="HD 38858"/>
+		
+		<destinationPlanet id="V" name="Fomalhaut"/>
+		
+	</route>
+	<route id="33" weitage="20.42" type="traffic">
+		<sourcePlanet id="K\'" name="Ursae Majoris"/>
+		
+		<destinationPlanet id="V" name="Fomalhaut"/>
+		
+	</route>
+	<route id="34" weitage="17.10" type="traffic">
+		<sourcePlanet id="J\'" name="HD 38858"/>
+		
+		<destinationPlanet id="I\'" name="Gliese 317"/>
+		
+	</route>
+	<route id="35" weitage="19.52" type="traffic">
+		<sourcePlanet id="Y" name="Gliese 176"/>
+		
+		<destinationPlanet id="A\'" name="Pollux"/>
+		
+	</route>
+	<route id="36" weitage="31.56" type="traffic">
+		<sourcePlanet id="A\'" name="Pollux"/>
+		
+		<destinationPlanet id="B\'" name="Gliese 86"/>
+		
+	</route>
+	<route id="37" weitage="23.13" type="traffic">
+		<sourcePlanet id="B\'" name="Gliese 86"/>
+		
+		<destinationPlanet id="C\'" name="HIP 57050"/>
+		
+	</route>
+	<route id="38" weitage="28.89" type="traffic">
+		<sourcePlanet id="K\'" name="Ursae Majoris"/>
+		
+		<destinationPlanet id="W" name="Virginis"/>
+		
+	</route>
+	<route id="39" weitage="10.64" type="traffic">
+		<sourcePlanet id="W" name="Virginis"/>
+		
+		<destinationPlanet id="C\'" name="HIP 57050"/>
+		
+	</route>
+	<route id="40" weitage="36.19" type="traffic">
+		<sourcePlanet id="W" name="Virginis"/>
+		
+		<destinationPlanet id="E\'" name="GJ 1214"/>
+		
+	</route>
+	<route id="41" weitage="36.48" type="traffic">
+		<sourcePlanet id="C\'" name="HIP 57050"/>
+		
+		<destinationPlanet id="D\'" name="Piscium"/>
+		
+	</route>
+	<route id="42" weitage="41.26" type="traffic">
+		<sourcePlanet id="E\'" name="GJ 1214"/>
+		
+		<destinationPlanet id="D\'" name="Piscium"/>
+		
+	</route>
+	<route id="43" weitage="42.07" type="traffic">
+		<sourcePlanet id="E\'" name="GJ 1214"/>
+		
+		<destinationPlanet id="F\'" name="Upsilon Andromedae"/>
+		
+	</route>
+	<route id="44" weitage="17.63" type="traffic">
+		<sourcePlanet id="F\'" name="Upsilon Andromedae"/>
+		
+		<destinationPlanet id="G\'" name="Gamma Cephei"/>
+		
+	</route>
+	<route id="45" weitage="40.48" type="traffic">
+		<sourcePlanet id="G\'" name="Gamma Cephei"/>
+		
+		<destinationPlanet id="H\'" name="HD 176051"/>
+		
+	</route>
+	
+</galaxy>  

@@ -52,7 +52,7 @@ public class GalaxyInfoDownloadController {
 	@RequestMapping("/xml")
 	public void downloadXMLResource(HttpServletRequest request, HttpServletResponse response) throws Exception {
 
-		URL resource = GalaxyInfoDownloadController.class.getResource("/sample/GalaxyMap.xml");
+		URL resource = GalaxyInfoDownloadController.class.getResource("/sample/DistanceBoundGalaxyMap.xml");
 		File file = Paths.get(resource.toURI()).toFile();
 		if (file.exists()) {
 			//get the mimetype

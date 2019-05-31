@@ -1,8 +1,10 @@
 com\interstellar\transport\app\entity\GalaxyImpl.class
+com\interstellar\transport\app\entity\DBServerUtil.class
 com\interstellar\transport\app\controller\TestJaxbConversion.class
 com\interstellar\transport\app\repository\PlanetRepository.class
 com\interstellar\transport\app\entity\PlanetImpl.class
 com\interstellar\transport\app\controller\FileUploadController.class
+com\interstellar\transport\app\entity\RouteAdapter.class
 com\interstellar\transport\app\service\impl\TransportServiceImpl.class
 com\interstellar\transport\app\controller\GalaxyInfoDownloadController.class
 com\interstellar\transport\app\controller\IndexController.class
@@ -10,6 +12,7 @@ com\interstellar\transport\app\entity\AbstractRoute.class
 com\interstellar\transport\app\vo\TransportVO.class
 com\interstellar\transport\app\repository\TimeBoundRouteRepository.class
 com\interstellar\transport\app\config\DataSourceConfig.class
+com\interstellar\transport\app\entity\AdaptedRoute.class
 com\interstellar\transport\app\entity\DistanceBoundRouteImpl.class
 com\interstellar\transport\app\service\impl\UploadServiceImpl.class
 com\interstellar\transport\app\service\TransportService.class

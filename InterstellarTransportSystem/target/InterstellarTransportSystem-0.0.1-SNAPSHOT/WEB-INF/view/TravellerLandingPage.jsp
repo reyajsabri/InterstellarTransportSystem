@@ -19,11 +19,13 @@
 	<h2>Interstellar Transport System wellcomes you !!</h1>
 	<br/>
 	<h4>You can upload Your Galaxy information in CSV OR XML File </h4>
-	<div id="csvFiel" class="padding">
-        <a id="downloadCsvFileLink" target="_self" class="linkCSS" href="${pageContext.request.contextPath}/download/csv">Download  sample Excel File</a>
+	<div id="excelFile" class="padding">
+        <a id="downloadExcelFileLink" target="_self" class="linkCSS" href="${pageContext.request.contextPath}/download/excel">Download  sample Excel File</a>
     </div>
-    <div id="csvFiel" class="padding">
+    <div id="xmlFile" class="padding">
         <a id="downloadXMLFileLink" target="_self" class="linkCSS" href="${pageContext.request.contextPath}/download/xml">Download sample xml File</a>
+        <br/>
+        <a id="downloadXSDFileLink" target="_self" class="linkCSS" href="${pageContext.request.contextPath}/download/xsd">Download sample xml schema File</a>
     </div>
     <br/>
     <h4>You can upload Your Galaxy information <a id="uploadFile" class="linkCSS" href="${pageContext.request.contextPath}/RouteUpload/"> Here</a> </h4>

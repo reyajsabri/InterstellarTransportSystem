@@ -9,11 +9,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
-import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.validation.Schema;
@@ -59,9 +60,9 @@ public class FileUploadController {
     public String singleFileXmlUpload(@RequestParam("file") MultipartFile xmlFile,
                                    RedirectAttributes redirectAttributes) {
     	
-    	if(true) {
-    		return "redirect:/RouteUpload/UploadStatus?message="+"XML  Upload functionality is in-progress ";
-    	}
+//    	if(true) {
+//    		return "redirect:/RouteUpload/UploadStatus?message="+"XML  Upload functionality is in-progress ";
+//    	}
     	
     	if (xmlFile.isEmpty()) {
             return "redirect:/RouteUpload/UploadStatus?message="+"Error: Please select a file to upload";
@@ -78,20 +79,48 @@ public class FileUploadController {
             
             File savedXmlFile = new File(path.toString());
             
-            //Get JAXBContext
-            JAXBContext jaxbContext = JAXBContext.newInstance(GalaxyImpl.class);
-             
-            //Create Unmarshaller
-            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-             
-            //Setup schema validator
-            SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.XML_NS_URI);
-            Schema galaxySchema = schemaFactory.newSchema(schemaFile);
-            jaxbUnmarshaller.setSchema(galaxySchema);
+            /*
+	         * Get JAXBContext
+	         */
+	        JAXBContext jaxbContext = JAXBContext.newInstance(GalaxyImpl.class);
+	         
+	        /*
+	         * Create Unmarshaller
+	         */
+	        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+	         
+	        /*
+	         * Validator
+	         */
+	        SchemaFactory schemaFactory = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");
+	        Schema galaxySchema = schemaFactory.newSchema(schemaFile);
+	        jaxbUnmarshaller.setSchema(galaxySchema);
+	        
+	        /*
+	         * Unmarshal xml file
+	         */
+            GalaxyImpl galaxyImpl = (GalaxyImpl) jaxbUnmarshaller.unmarshal(savedXmlFile);
             
+            List<DistanceBoundRouteImpl> routes = new ArrayList<>();
+            List<TimeBoundRouteImpl> traffics = new ArrayList<>();
+            Set<PlanetImpl> planets = new HashSet<>();
+            galaxyImpl.getRoutes().forEach(route -> {
+            	if("traffic".equals(route.getType())) {
+            		traffics.add((TimeBoundRouteImpl)route);
+            	}else {
+            		routes.add((DistanceBoundRouteImpl)route);
+            	}
+            	planets.add((PlanetImpl)route.getSource());
+            	planets.add((PlanetImpl)route.getDestination());
+            });
+            
+            uploadService.saveUploadDataToDB(new ArrayList<>(planets), routes, traffics);
+            redirectAttributes.addFlashAttribute("message",
+                    "You successfully uploaded '" + xmlFile.getOriginalFilename() + "'");
             
     	}catch (Exception e) {
             e.printStackTrace();
+            return "redirect:/RouteUpload/UploadStatus?message="+"Error: Unrelated File!! Some Exception Need to Handle!";
         }
     	
     	return "redirect:/RouteUpload/UploadStatus?message="+"You have successfully uploaded '" + xmlFile.getOriginalFilename() + "'";
@@ -127,7 +156,7 @@ public class FileUploadController {
 
         } catch (IOException e) {
             e.printStackTrace();
-            return "redirect:/RouteUpload/UploadStatus?message="+"Error: Some Exception Need to Handle!";
+            return "redirect:/RouteUpload/UploadStatus?message="+"Error: Unrelated File!! Some Exception Need to Handle!";
         }
 
         return "redirect:/RouteUpload/UploadStatus?message="+"You have successfully uploaded '" + excelFile.getOriginalFilename() + "'";

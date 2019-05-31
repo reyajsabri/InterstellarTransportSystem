@@ -10,13 +10,15 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import com.interstellar.transport.core.Planet;
 import com.interstellar.transport.core.Route;
 
 @MappedSuperclass
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlSeeAlso({DistanceBoundRouteImpl.class})
+@XmlSeeAlso({AdaptedRoute.class})
+@XmlJavaTypeAdapter(RouteAdapter.class)
 public abstract class AbstractRoute implements Route {
 
 	@Id
@@ -26,13 +28,16 @@ public abstract class AbstractRoute implements Route {
 	
 	@ManyToOne
 	@JoinColumn(name = "PLANET_ORIGIN")
-	@XmlElement(name="source")
+	@XmlElement(name="sourcePlanet")
 	private PlanetImpl source;
 	
 	@ManyToOne
 	@JoinColumn(name = "PLANET_DESTNATION")
-	@XmlElement(name="destination")
+	@XmlElement(name="destinationPlanet")
 	private PlanetImpl destination;
+	
+	@XmlAttribute(name="type")
+	private String type;
 
 	@Override
 	public String getId() {
@@ -59,6 +64,14 @@ public abstract class AbstractRoute implements Route {
 
 	public void setSource(PlanetImpl source) {
 		this.source = source;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 }

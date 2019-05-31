@@ -18,13 +18,13 @@ public class GalaxyImpl implements Galaxy{
 	private transient final Set<Planet> planets = new HashSet<>();
 	
 	@XmlElement( name = "route" )
-	private Set<DistanceBoundRouteImpl> routes = new HashSet<>();
+	private Set<AbstractRoute> routes = new HashSet<>();
     
-    public void setRoutes(Set<DistanceBoundRouteImpl> routes) {
+    public void setRoutes(Set<AbstractRoute> routes) {
 		this.routes = routes;
 	}
 
-	public Set<DistanceBoundRouteImpl> getRoutes() {
+	public Set<AbstractRoute> getRoutes() {
 		return routes;
 	}
 
